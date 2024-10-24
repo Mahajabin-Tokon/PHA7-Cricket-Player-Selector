@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Virat Kohli",
+    "image": "https://example.com/images/virat_kohli.jpg",
+    "country": "India",
+    "handedness": "Right-handed",
+    "role": "Batsman",
+    "price": 1500000
+  },
+  {
+    "name": "Ben Stokes",
+    "image": "https://example.com/images/ben_stokes.jpg",
+    "country": "England",
+    "handedness": "Left-handed",
+    "role": "All-rounder",
+    "price": 1700000
+  },
+  {
+    "name": "Mitchell Starc",
+    "image": "https://example.com/images/mitchell_starc.jpg",
+    "country": "Australia",
+    "handedness": "Left-handed",
+    "role": "Bowler",
+    "price": 1200000
+  },
+  {
+    "name": "Babar Azam",
+    "image": "https://example.com/images/babar_azam.jpg",
+    "country": "Pakistan",
+    "handedness": "Right-handed",
+    "role": "Batsman",
+    "price": 1300000
+  },
+  {
+    "name": "Rashid Khan",
+    "image": "https://example.com/images/rashid_khan.jpg",
+    "country": "Afghanistan",
+    "handedness": "Right-handed",
+    "role": "All-rounder",
+    "price": 1600000
+  },
+  {
+    "name": "Kane Williamson",
+    "image": "https://example.com/images/kane_williamson.jpg",
+    "country": "New Zealand",
+    "handedness": "Right-handed",
+    "role": "Batsman",
+    "price": 1400000
+  }
+]
