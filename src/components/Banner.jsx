@@ -1,4 +1,4 @@
-const Banner = () => {
+const Banner = ({handleCoin}) => {
   return (
     <div
       className="flex flex-col items-center gap-4 bg-cover bg-no-repeat bg-black py-10 rounded-xl"
@@ -10,7 +10,7 @@ const Banner = () => {
       </h1>
       <h2 className="text-gray-400">Beyond Boundaries Beyond Limits</h2>
       <div className="p-2 border-2 border-lime-300 rounded-xl">
-        <button className="bg-lime-300 p-2 rounded-xl">
+        <button onClick={handleCoin} className="bg-lime-300 p-2 rounded-xl">
           Claim Free Credit
         </button>
       </div>

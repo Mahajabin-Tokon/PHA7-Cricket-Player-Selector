@@ -10,6 +10,11 @@ const App = () => {
   const [players, setPlayers] = useState([]);
   const [status, setStatus] = useState(true);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
+  const [coin, setCoin] = useState(0);
+
+  const handleCoin = () => {
+    setCoin(coin+10000000)
+  };
 
   const handleSelectedPlayers = (player) => {
     const playerExists = selectedPlayers.find(
@@ -19,6 +24,7 @@ const App = () => {
       alert("Player already selected");
     } else {
       setSelectedPlayers([...selectedPlayers, player]);
+      setCoin(coin-player.price)
     }
   };
 
@@ -48,8 +54,8 @@ const App = () => {
   return (
     <>
       <div className="w-11/12 mx-auto p-4 space-y-10">
-        <Nav />
-        <Banner />
+        <Nav coin={coin}/>
+        <Banner handleCoin={handleCoin}/>
         <Playerselection
           status={status}
           handleStatus={handleStatus}
