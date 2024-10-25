@@ -13,18 +13,22 @@ const App = () => {
   const [coin, setCoin] = useState(0);
 
   const handleCoin = () => {
-    setCoin(coin+10000000)
+    setCoin(coin + 1000000);
   };
 
   const handleSelectedPlayers = (player) => {
-    const playerExists = selectedPlayers.find(
-      (selectedPlayer) => selectedPlayer.id === player.id
-    );
-    if (playerExists) {
-      alert("Player already selected");
+    if (coin <= player.price) {
+      alert("Player price is more than available credit");
     } else {
-      setSelectedPlayers([...selectedPlayers, player]);
-      setCoin(coin-player.price)
+      const playerExists = selectedPlayers.find(
+        (selectedPlayer) => selectedPlayer.id === player.id
+      );
+      if (playerExists) {
+        alert("Player already selected");
+      } else {
+        setSelectedPlayers([...selectedPlayers, player]);
+        setCoin(coin - player.price);
+      }
     }
   };
 
@@ -54,8 +58,8 @@ const App = () => {
   return (
     <>
       <div className="w-11/12 mx-auto p-4 space-y-10">
-        <Nav coin={coin}/>
-        <Banner handleCoin={handleCoin}/>
+        <Nav coin={coin} />
+        <Banner handleCoin={handleCoin} />
         <Playerselection
           status={status}
           handleStatus={handleStatus}
