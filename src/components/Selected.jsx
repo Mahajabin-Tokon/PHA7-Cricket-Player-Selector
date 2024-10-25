@@ -1,4 +1,4 @@
-const Selected = ({ selectedPlayers }) => {
+const Selected = ({ selectedPlayers, removeSelectedPlayers }) => {
   return (
     <div className="space-y-8">
       {selectedPlayers.map((player, idx) => (
@@ -10,7 +10,7 @@ const Selected = ({ selectedPlayers }) => {
               <p>{player.handedness}</p>
             </div>
           </div>
-          <i className="fa-regular fa-trash-can text-red-500 text-3xl"></i>
+          <i onClick={() => removeSelectedPlayers(player)} className="fa-regular fa-trash-can text-red-500 text-3xl"></i>
         </div>
       ))}
     </div>

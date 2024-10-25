@@ -15,6 +15,15 @@ const App = () => {
     setSelectedPlayers([...selectedPlayers, player]);
   };
 
+  const removeSelectedPlayers = (player) => {
+    console.log(player.id)
+    setSelectedPlayers(
+      selectedPlayers.filter(
+        (selectedPlayer) => selectedPlayer.id !== player.id
+      )
+    );
+  };
+
   const handleStatus = (value) => {
     if (value === 1) {
       setStatus(true);
@@ -50,6 +59,7 @@ const App = () => {
           <Selected
             handleStatus={handleStatus}
             selectedPlayers={selectedPlayers}
+            removeSelectedPlayers={removeSelectedPlayers}
           />
         )}
       </div>
