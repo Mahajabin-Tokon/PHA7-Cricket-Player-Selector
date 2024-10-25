@@ -1,10 +1,10 @@
-##Name of project:
+## Name of project:
 Cricket Player Selector
 
-##A brief description:
+## A brief description:
 A website that can be used to gain credit and purchase famour cricket players based on their price. 
 
-##Technologies used:
+## Technologies used:
 - React
 - Tailwind
 - DaisyUI
@@ -13,7 +13,7 @@ A website that can be used to gain credit and purchase famour cricket players ba
 - NPM
 - Vite
 
-##Key features of your project:
+## Key features of your project:
 1. The selected players are kept in a list on the selected tap
 2. React Components are conditionaly rendered to show use which tab they are on
 3. Checks are performed to ensure the same player is not selected and the credit limit is no crossed
