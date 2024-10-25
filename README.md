@@ -4,6 +4,9 @@ Cricket Player Selector
 ## A brief description:
 A website that can be used to gain credit and purchase famour cricket players based on their price. 
 
+## Live Link:
+https://classy-alpaca-e7d9a0.netlify.app/
+
 ## Technologies used:
 - React
 - Tailwind
