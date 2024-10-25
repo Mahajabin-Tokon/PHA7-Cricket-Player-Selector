@@ -16,21 +16,25 @@ const App = () => {
   const [coin, setCoin] = useState(0);
 
   const handleCoin = () => {
-    setCoin(coin + 1000000);
+    setCoin(coin + 10000000);
   };
 
   const handleSelectedPlayers = (player) => {
-    if (coin <= player.price) {
-      toast("Player price is more than available credit");
+    if (selectedPlayers.length === 6) {
+      toast("Maximum number of selections reached");
     } else {
-      const playerExists = selectedPlayers.find(
-        (selectedPlayer) => selectedPlayer.id === player.id
-      );
-      if (playerExists) {
-        toast("Player already selected");
+      if (coin <= player.price) {
+        toast("Player price is more than available credit");
       } else {
-        setSelectedPlayers([...selectedPlayers, player]);
-        setCoin(coin - player.price);
+        const playerExists = selectedPlayers.find(
+          (selectedPlayer) => selectedPlayer.id === player.id
+        );
+        if (playerExists) {
+          toast("Player already selected");
+        } else {
+          setSelectedPlayers([...selectedPlayers, player]);
+          setCoin(coin - player.price);
+        }
       }
     }
   };

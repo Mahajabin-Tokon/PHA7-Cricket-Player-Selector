@@ -52,5 +52,43 @@
     "handedness": "Right-handed",
     "role": "Batsman",
     "price": 1400000
+  },
+  {
+    "id": 7,
+    "name": "Jasprit Bumrah",
+    "image": "https://i.ibb.co/thrBWMg/c7.jpg",
+    "country": "India",
+    "handedness": "Right-handed",
+    "role": "Bowler",
+    "price": 1250000
+  },
+  {
+    "id": 8,
+    "name": "David Warner",
+    "image": "https://i.ibb.co/fCnCBvH/c8.jpg",
+    "country": "Australia",
+    "handedness": "Left-handed",
+    "role": "Batsman",
+    "price": 1450000
+  },
+  {
+    "id": 9,
+    "name": "Shaheen Afridi",
+    "image": "https://i.ibb.co/HCmRq9v/c9.jpg",
+    "country": "Pakistan",
+    "handedness": "Left-handed",
+    "role": "Bowler",
+    "price": 1350000
+  },
+  {
+    "id": 10,
+    "name": "Shakib Al Hasan",
+    "image": "https://i.ibb.co/CKCY3GK/c10.jpg",
+    "country": "Bangladesh",
+    "handedness": "Left-handed",
+    "role": "All-rounder",
+    "price": 1500000
   }
 ]
+
+
