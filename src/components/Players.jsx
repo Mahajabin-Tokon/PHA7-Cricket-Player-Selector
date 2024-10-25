@@ -1,7 +1,29 @@
-const Players = ({ players }) => {
+const Players = ({ players, handleStatus, status }) => {
   return (
     <div>
-      <div></div>
+      <div className="flex flex-col md:flex-row justify-between items-center py-4">
+        <h1 className="font-bold text-2xl">Available Players</h1>
+
+        <div className="rounded-xl border-2">
+          <span
+            onClick={() => {
+              handleStatus(1);
+            }}
+            className={status ? "bg-green-400 border-r-2" : "border-r-2"}
+          >
+            Available
+          </span>
+          <span
+            onClick={() => {
+              handleStatus(2);
+            }}
+            className={status ? "" : "bg-green-400 "}
+          >
+            Selected (0)
+          </span>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {players.map((player) => (
           <div key={player.id} className="border-2 p-4 rounded-xl space-y-2">
@@ -12,7 +34,7 @@ const Players = ({ players }) => {
             />
             <h1 className="text-xl font-bold">
               <div className="flex items-center gap-2">
-              <i className="fa-regular fa-circle-user"></i>
+                <i className="fa-regular fa-circle-user"></i>
                 {player.name}
               </div>
             </h1>
