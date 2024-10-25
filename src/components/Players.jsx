@@ -1,28 +1,7 @@
-const Players = ({ players, handleStatus, status }) => {
+const Players = ({ players, handleSelectedPlayers }) => {
   return (
     <div>
-      <div className="flex flex-col md:flex-row justify-between items-center py-4">
-        <h1 className="font-bold text-2xl">Available Players</h1>
-
-        <div className="rounded-xl border-2">
-          <span
-            onClick={() => {
-              handleStatus(1);
-            }}
-            className={status ? "bg-green-400 border-r-2" : "border-r-2"}
-          >
-            Available
-          </span>
-          <span
-            onClick={() => {
-              handleStatus(2);
-            }}
-            className={status ? "" : "bg-green-400 "}
-          >
-            Selected (0)
-          </span>
-        </div>
-      </div>
+      
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {players.map((player) => (
@@ -56,7 +35,14 @@ const Players = ({ players, handleStatus, status }) => {
             </div>
             <div className="flex justify-between items-center">
               <p className="font-bold">$Price {player.price}</p>
-              <button className="btn bg-white">Choose Player</button>
+              <button
+                onClick={() => {
+                  handleSelectedPlayers(player);
+                }}
+                className="btn bg-white"
+              >
+                Choose Player
+              </button>
             </div>
           </div>
         ))}

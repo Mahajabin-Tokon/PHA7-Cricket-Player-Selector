@@ -4,18 +4,23 @@ import Footer from "./components/Footer";
 import Players from "./components/Players";
 import Selected from "./components/Selected";
 import { useEffect, useState } from "react";
+import Playerselection from "./components/Playerselection";
 
 const App = () => {
   const [players, setPlayers] = useState([]);
   const [status, setStatus] = useState(true);
+  const [selectedPlayers, setSelectedPlayers] = useState([]);
+
+  const handleSelectedPlayers = (player) => {
+    setSelectedPlayers([...selectedPlayers, player]);
+  };
 
   const handleStatus = (value) => {
-    if (value===1) {
+    if (value === 1) {
       setStatus(true);
-    } else if (value===2) {
+    } else if (value === 2) {
       setStatus(false);
     }
-    console.log(status)
   };
 
   useEffect(() => {
@@ -29,10 +34,23 @@ const App = () => {
       <div className="w-11/12 mx-auto p-4 space-y-10">
         <Nav />
         <Banner />
+        <Playerselection
+          status={status}
+          handleStatus={handleStatus}
+          selectedPlayers={selectedPlayers}
+        />
         {status ? (
-          <Players players={players} handleStatus={handleStatus} status={status}/>
+          <Players
+            players={players}
+            handleStatus={handleStatus}
+            status={status}
+            handleSelectedPlayers={handleSelectedPlayers}
+          />
         ) : (
-          <Selected handleStatus={handleStatus} />
+          <Selected
+            handleStatus={handleStatus}
+            selectedPlayers={selectedPlayers}
+          />
         )}
       </div>
       <Footer />
