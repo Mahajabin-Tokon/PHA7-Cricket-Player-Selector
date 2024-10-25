@@ -12,11 +12,18 @@ const App = () => {
   const [selectedPlayers, setSelectedPlayers] = useState([]);
 
   const handleSelectedPlayers = (player) => {
-    setSelectedPlayers([...selectedPlayers, player]);
+    const playerExists = selectedPlayers.find(
+      (selectedPlayer) => selectedPlayer.id === player.id
+    );
+    if (playerExists) {
+      alert("Player already selected");
+    } else {
+      setSelectedPlayers([...selectedPlayers, player]);
+    }
   };
 
   const removeSelectedPlayers = (player) => {
-    console.log(player.id)
+    console.log(player.id);
     setSelectedPlayers(
       selectedPlayers.filter(
         (selectedPlayer) => selectedPlayer.id !== player.id
