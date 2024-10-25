@@ -1,4 +1,6 @@
-const Nav = ({coin}) => {
+import PropTypes from "prop-types";
+
+const Nav = ({ coin }) => {
   return (
     <div className="flex flex-col md:flex-row justify-between items-center">
       <div className="">
@@ -20,3 +22,7 @@ const Nav = ({coin}) => {
 };
 
 export default Nav;
+
+Nav.propTypes = {
+  coin: PropTypes.number,
+};

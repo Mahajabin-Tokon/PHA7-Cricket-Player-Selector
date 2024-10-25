@@ -3,8 +3,11 @@ import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Players from "./components/Players";
 import Selected from "./components/Selected";
-import { useEffect, useState } from "react";
 import Playerselection from "./components/Playerselection";
+
+import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const [players, setPlayers] = useState([]);
@@ -18,13 +21,13 @@ const App = () => {
 
   const handleSelectedPlayers = (player) => {
     if (coin <= player.price) {
-      alert("Player price is more than available credit");
+      toast("Player price is more than available credit");
     } else {
       const playerExists = selectedPlayers.find(
         (selectedPlayer) => selectedPlayer.id === player.id
       );
       if (playerExists) {
-        alert("Player already selected");
+        toast("Player already selected");
       } else {
         setSelectedPlayers([...selectedPlayers, player]);
         setCoin(coin - player.price);
@@ -81,6 +84,7 @@ const App = () => {
         )}
       </div>
       <Footer />
+      <ToastContainer />
     </>
   );
 };

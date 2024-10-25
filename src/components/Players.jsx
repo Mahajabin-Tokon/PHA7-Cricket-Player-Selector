@@ -1,8 +1,7 @@
+import PropTypes from "prop-types";
 const Players = ({ players, handleSelectedPlayers }) => {
   return (
     <div>
-      
-
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {players.map((player) => (
           <div key={player.id} className="border-2 p-4 rounded-xl space-y-2">
@@ -52,3 +51,7 @@ const Players = ({ players, handleSelectedPlayers }) => {
 };
 
 export default Players;
+Players.propTypes = {
+  players: PropTypes.array,
+  handleSelectedPlayers: PropTypes.func,
+};

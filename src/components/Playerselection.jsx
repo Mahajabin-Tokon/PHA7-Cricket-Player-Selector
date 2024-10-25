@@ -1,9 +1,15 @@
-const Playerselection = ({status, handleStatus, selectedPlayers}) => {
+import PropTypes from "prop-types";
+const Playerselection = ({ status, handleStatus, selectedPlayers }) => {
   return (
     <div>
       <div className="flex flex-col md:flex-row justify-between items-center py-4">
-        {status ? <h1 className="font-bold text-2xl">Available Players</h1> :<h1 className="font-bold text-2xl">Selected Players ({selectedPlayers.length}/6)</h1>}
-        
+        {status ? (
+          <h1 className="font-bold text-2xl">Available Players</h1>
+        ) : (
+          <h1 className="font-bold text-2xl">
+            Selected Players ({selectedPlayers.length}/6)
+          </h1>
+        )}
 
         <div className="rounded-xl border-2">
           <span
@@ -37,3 +43,8 @@ const Playerselection = ({status, handleStatus, selectedPlayers}) => {
 };
 
 export default Playerselection;
+Playerselection.propTypes = {
+  status: PropTypes.bool,
+  handleStatus: PropTypes.func,
+  selectedPlayers: PropTypes.array
+};

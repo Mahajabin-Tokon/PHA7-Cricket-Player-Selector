@@ -1,4 +1,5 @@
-const Banner = ({handleCoin}) => {
+import PropTypes from "prop-types";
+const Banner = ({ handleCoin }) => {
   return (
     <div
       className="flex flex-col items-center gap-4 bg-cover bg-no-repeat bg-black py-10 rounded-xl"
@@ -19,3 +20,6 @@ const Banner = ({handleCoin}) => {
 };
 
 export default Banner;
+Banner.propTypes = {
+  handleCoin: PropTypes.func,
+};

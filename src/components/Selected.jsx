@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 const Selected = ({ selectedPlayers, removeSelectedPlayers, handleStatus }) => {
   return (
     <div className="space-y-8">
@@ -40,3 +41,8 @@ const Selected = ({ selectedPlayers, removeSelectedPlayers, handleStatus }) => {
 };
 
 export default Selected;
+Selected.propTypes = {
+  selectedPlayers: PropTypes.array,
+  removeSelectedPlayers: PropTypes.func,
+  handleStatus: PropTypes.bool,
+};
