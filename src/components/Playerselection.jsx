@@ -46,5 +46,5 @@ export default Playerselection;
 Playerselection.propTypes = {
   status: PropTypes.bool,
   handleStatus: PropTypes.func,
-  selectedPlayers: PropTypes.array
+  selectedPlayers: PropTypes.array,
 };

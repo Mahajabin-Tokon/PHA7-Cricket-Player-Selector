@@ -15,10 +15,12 @@ const App = () => {
   const [selectedPlayers, setSelectedPlayers] = useState([]);
   const [coin, setCoin] = useState(0);
 
+  // Fuction to add credit to the coin state
   const handleCoin = () => {
     setCoin(coin + 10000000);
   };
 
+  // Function to add players to the selectedPlayers state if the checks pass
   const handleSelectedPlayers = (player) => {
     if (selectedPlayers.length === 6) {
       toast("Maximum number of selections reached");
@@ -39,6 +41,7 @@ const App = () => {
     }
   };
 
+  // Function to remove player from selectedPlayers state upon delete button click
   const removeSelectedPlayers = (player) => {
     console.log(player.id);
     setSelectedPlayers(
@@ -48,6 +51,7 @@ const App = () => {
     );
   };
 
+  // Function to update the status state in order to toggle components
   const handleStatus = (value) => {
     if (value === 1) {
       setStatus(true);
@@ -55,7 +59,7 @@ const App = () => {
       setStatus(false);
     }
   };
-
+  
   useEffect(() => {
     fetch("players.json")
       .then((res) => res.json())
